@@ -14,9 +14,9 @@ var app = express();
 var dbOptions = {
       host: 'localhost',
       user: 'root',
-      password: '08386354',
+      password: '1amdan13l',
       port: 3306,
-      database: 'Be_Mqabaqaba'
+      database: 'mqabaqaba'
 };
 
 //setup template handlebars as the template engine
@@ -27,36 +27,33 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 //setup middleware
+
 app.use(myConnection(mysql, dbOptions, 'single'));
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-function errorHandler(err, req, res, next) {
-  res.status(500);
-  res.render('error', { error: err });
-}
+// function errorHandler(err, req, res, next) {
+//   res.status(500);
+//   res.render('error', { error: err });
+// }
+//
+// app.use(errorHandler);
 
 //setup the handlers
 app.get('/', function (req, res) {
   res.render('home');
 });
 
-
 //app.post("/giveChallenge", challenge.giveChallenge ),
 
 
-
-
-
-
-
-app.use(errorHandler);
 //configure the port number using and environment number
 var portNumber = process.env.CRUD_PORT_NR || 3002;
 
 //start everything up
 app.listen(portNumber, function (){
-console.log('Create, Read, Update, and Delete (CRUD) online_schools app server listening on:', portNumber);
+console.log('app server listening on:', portNumber);
 });

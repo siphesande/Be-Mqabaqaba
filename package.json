@@ -26,6 +26,6 @@
     "express-handlebars": "^3.0.0",
     "express-myconnection": "^1.0.4",
     "handlebars": "^4.0.5",
-    "mysql": "^2.10.2",
-  },
+    "mysql": "^2.10.2"
+  }
 }
