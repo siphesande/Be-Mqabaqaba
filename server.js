@@ -5,10 +5,9 @@ var express = require('express'),
     mysql = require('mysql'),//node-mysql module
     myConnection = require('express-myconnection'),//express-my connection module
     bodyParser = require('body-parser'),
-    computerLanguages = require('./routes/computerLanguages'),
-    categories = require('./routes/categories'),
-    schools = require('./routes/schools'),
-    enrollments =  require('./routes/enrollments')
+    challenge = require('./routes/challenges'),
+    posts =require("./routes/posts")
+
     bcryt = require('bcryt');
 var app = express();
 
@@ -39,6 +38,13 @@ function errorHandler(err, req, res, next) {
 }
 
 //setup the handlers
+app.get('/', function (req, res) {
+  res.render('home');
+});
+
+
+app.post("/giveChallenge", challenge.giveChallenge ),
+
 
 
 
