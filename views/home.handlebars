@@ -1,8 +1,9 @@
 <div class="container">
-  <h3>Please give me a challenge </h3>
-at: <div class="row">
- <div class="col-xs-2"><input type="time" class="form-control" placeholder="enter time" required>
+  <h3>Please give me a challenge at:</h3>
 
-  </div>
+<form action="/challenge/add" method="post">
+<div class="col-xs-2"><input id="challenge-time" name="time" type="time" class="form-control" placeholder="enter your preferred challenge time" required></div>
 
-</div> <button type="button" class="btn btn-success">Submit</button>
+<button type="button" class="btn btn-success">Submit</button>
+</div>
+</form>
