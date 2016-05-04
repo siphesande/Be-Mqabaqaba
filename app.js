@@ -44,9 +44,12 @@ app.use(bodyParser.json())
 
 //setup the handlers
 app.get('/', function (req, res) {
-  res.render('home');
+  res.redirect('/home');
 });
 
+app.get('/home', function(req,res){
+    res.render('home');
+});
 //app.post("/giveChallenge", challenge.giveChallenge ),
 
 
