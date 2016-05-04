@@ -4,11 +4,11 @@ var express = require('express'),
     exphbs  = require('express-handlebars'),
     mysql = require('mysql'),//node-mysql module
     myConnection = require('express-myconnection'),//express-my connection module
-    bodyParser = require('body-parser'),
-    challenge = require('./routes/challenges'),
-    posts =require("./routes/posts")
+    bodyParser = require('body-parser');
+    //challenge = require('./routes/challenges'),
+    //posts =require("./routes/posts")
 
-    bcryt = require('bcryt');
+
 var app = express();
 
 var dbOptions = {
@@ -16,10 +16,11 @@ var dbOptions = {
       user: 'root',
       password: '08386354',
       port: 3306,
-      database: 'Be-Mqabaqaba'
+      database: 'Be_Mqabaqaba'
 };
 
 //setup template handlebars as the template engine
+app.set('views',__dirname + '/views');
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
@@ -43,7 +44,7 @@ app.get('/', function (req, res) {
 });
 
 
-app.post("/giveChallenge", challenge.giveChallenge ),
+//app.post("/giveChallenge", challenge.giveChallenge ),
 
 
 
