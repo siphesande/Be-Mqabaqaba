@@ -9,11 +9,19 @@ USE mqabaqaba;
 
 CREATE TABLE users(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-  name VARCHAR(40)
+  name VARCHAR(40),
+  completed INT,
+  points INT,
+  status INT
   #password VARCHAR(100),
 );
 
 INSERT INTO users (name) VALUES ("Lusando"),("Eugene");
+
+UPDATE users
+SET completed = 0,
+    points = 0,
+    status = 0;
 
 CREATE TABLE challenge_types(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,

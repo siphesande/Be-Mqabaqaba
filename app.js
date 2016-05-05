@@ -53,7 +53,9 @@ app.get('/home', function(req,res){
 });
 //app.post("/giveChallenge", challenge.giveChallenge ),
 
-app.get('/user/:userID', user.showChallenge);
+app.get('/user/:userID', user.showChallenges);
+app.get('/user/:userID/challenge/complete', user.updateStatus);
+app.get('/user/:userID/challenge/cancel', user.cancel);
 app.get('/user/:userID/challenge/add',function(req,res){
   res.render('add-challenge');
 });
