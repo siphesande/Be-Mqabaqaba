@@ -57,7 +57,9 @@ app.get('/user/:userID', user.showChallenge);
 app.get('/user/:userID/challenge/add',function(req,res){
   res.render('add-challenge');
 });
-app.post('/user/:userID/challenge/add/success', user.addChallenge); 
+
+app.post('/user/:userID/challenge/add/success', user.addChallenge);
+
 
 //configure the port number using and environment number
 var portNumber = process.env.CRUD_PORT_NR || 3002;
