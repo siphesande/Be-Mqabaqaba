@@ -168,7 +168,16 @@ exports.showChallenges = function (req, res, next) {
             });
         };
 
-        exports.cancel = function (req, res) {
+        exports.cancel = function (req, res, next) {
             var id = req.params.userID;
-            res.redirect('/user/' + id);
-        };
+            var input = {
+                          status: 0
+            };
+            req.getConnection(function (err, connection) {
+            connection.query("UPDATE users SET ? WHERE id = ?", [input, id], function (err, result) {
+                if (err) return next(err);
+                console.log("user updated!");
+                res.redirect('/user/' + id);
+        });
+      });
+      };
