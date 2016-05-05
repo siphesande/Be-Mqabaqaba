@@ -19,7 +19,7 @@ exports.showChallenges = function (req, res, next) {
 
                             busyUser = resultRow.status === 1;
                        var  activeNotBusyUser = activeUser && !busyUser,
-                            inActiveNotBusyUser = inactiveUser && !busyUser;
+                            inactiveNotBusyUser = inactiveUser && !busyUser;
 
                         if (busyUser) {
 

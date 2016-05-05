@@ -1,21 +1,25 @@
 <h3 id="welcome-message">Welcome, {{user}} !</h3>
-<h5>Your Challenges</h5>
+
 
 {{#no_challenges}}
+<h5>Your Challenges</h5>
 <p id="message">Unfortunately there are no challenges for your profile yet.</p>
 <!-- <a href="/user/1/challenge/add"><button id="addChallenge">add a challenge!</button></a> -->
- <a href="/user/1/challenge/add"><button type="button" id="add_a_challenge" class="btn btn-success">Add a challenge!</button>
+ <a href="/user/1/challenge/add"><button type="button" id="add_a_challenge" class="btn btn-success">Add a challenge!</button></a>
 
 {{/no_challenges}}
 
 {{#completed}}
-<p>Well done, {{../user}}, you have completed {{completed}} challenges! <br> You have earned a total of {{points}} points!</p>
+<h5>Your Challenges</h5>
+
+<p>Well done, <strong>{{../user}}</strong>, you have completed <strong>{{completed}}</strong> challenges! <br> You have earned a total of <strong>{{points}}</strong> points!</p>
 
 <a href="/user/1/challenge/add"><button>do another challenge!</button></a>
 
 {{/completed}}
 
 {{#challenges}}
+<h2>Your Challenge Starts In</h2>
   <center>
   <table id="table" border="0">
       <tr>
@@ -99,7 +103,7 @@ setTimeout("countdown(theyear,themonth,theday,thehour,theminute)",1000);
 }
 
 
-  countdown({{year}}, {{month}},{{day}},{{hour}},{{minute}}, "Time to start your challenge!");
+  countdown({{year}}, {{month}},{{day}},{{hour}},{{minute}}, "Now!");
 
 </script>
 
