@@ -14,7 +14,7 @@
     width: 80%;
     text-align: centre;
     font-family: Arial;
-    font-size: 2em;
+    font-size: 1em;
     font-weight: bold;   /* options are normal, bold, bolder, lighter */
     color: #FFFFFF;      /* change color using the hexadecimal color codes for HTML */
 }
