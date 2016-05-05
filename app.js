@@ -62,7 +62,7 @@ app.post('/user/:userID/challenge/add/success', user.addChallenge);
 
 
 //configure the port number using and environment number
-var portNumber = process.env.CRUD_PORT_NR || 3002;
+var portNumber = process.env.CRUD_PORT_NR || 8080;
 
 //start everything up
 app.listen(portNumber, function (){

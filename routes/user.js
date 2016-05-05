@@ -7,7 +7,6 @@ exports.showChallenge = function(req, res, next) {
       req.getConnection(function(err, connection){
         connection.query("SELECT * FROM user_challenges WHERE user_id = ?", id, function(err, result){
           if (err) return next(err);
-          console.log(result);
           context = {
                       no_challenges: result.length===0,
                       userID: id
@@ -17,14 +16,14 @@ exports.showChallenge = function(req, res, next) {
             context.challenges = result[0];
 
           var date = result[0].date,
-              type = result[0].type_id,
+              type = result[0].challenge_id,
               challenges = [ { id: 1,
-                               description: 'Go for a run and take a picture of something that inspires you!',
+                               description: 'Go for a run and take a picture of something that inspires you. Restrictions: distance: 1km, time limit: 10minutes!',
                                type_id: 1,
                                time_limit: 10,
                                distance: 1000 },
                            { id: 2,
-                             description: 'Take a new friend out for coffee!',
+                             description: 'Take a new friend out for coffee! No restrictions',
                              type_id: 2,
                              time_limit: 0,
                              distance: 0 },
@@ -35,10 +34,11 @@ exports.showChallenge = function(req, res, next) {
                              distance: 500 }];
 
           var details = challenges.find(function(a){
+            console.log(type);
             return a.type_id === type;
           });
 
-          console.log(details);
+          // console.log("This is details", details);
           context.challenges.day = date.getDay() + 1,
           context.challenges.month = date.getMonth() + 1,
           context.challenges.year = date.getFullYear(),
@@ -46,7 +46,9 @@ exports.showChallenge = function(req, res, next) {
 
           context.challenges.hour = timeArray[0],
           context.challenges.minute = timeArray[1];
-          console.log("This is challenges", context.challenges);
+          // console.log("This is challenges", context.challenges);
+
+          context.challenges.message = details.description;
         }
 
           // var current="Time's up!";        //—>enter what you want the script to display when the target date and time are reached, limit to 20 characters
