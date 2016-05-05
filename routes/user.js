@@ -14,27 +14,27 @@ exports.showChallenge = function(req, res, next) {
 
           if(result.length>0) {
             context.challenges = result[0];
-
+            console.log("this is result", result);
           var date = result[0].date,
               type = result[0].challenge_id,
               challenges = [ { id: 1,
-                               description: 'Go for a run and take a picture of something that inspires you. Restrictions: distance: 1km, time limit: 10minutes!',
+                               description: 'Go for a run and take a picture of something that inspires you. <br> <em>Restrictions: distance: <strong>1km</strong>, time limit: <strong>10 minutes!</strong></em>',
                                type_id: 1,
                                time_limit: 10,
                                distance: 1000 },
                            { id: 2,
-                             description: 'Take a new friend out for coffee! No restrictions',
+                             description: 'Take a new friend out for coffee! <br> <em>No restrictions</em>',
                              type_id: 2,
                              time_limit: 0,
                              distance: 0 },
                            { id: 3,
-                             description: 'Make a healthy home-made snack and share with 3 friends!',
+                             description: 'Make a healthy home-made snack and share with 3 friends! <br> <em>Restrictions: distance: <strong>500m</strong>, time limit: <strong>10 minutes!</strong></em>',
                              type_id: 3,
                              time_limit: 10,
                              distance: 500 }];
 
           var details = challenges.find(function(a){
-            console.log(type);
+            // console.log(type);
             return a.type_id === type;
           });
 
@@ -73,7 +73,7 @@ exports.addChallenge = function (req, res, next) {
       type = req.body.type,
       timeArray = req.body.time.split(":"),
       dateNow = new Date();
-console.log(timeArray);
+// console.log(timeArray);
 var challenge_hour = timeArray[0],
     challenge_minute = timeArray[1];
 
@@ -83,8 +83,8 @@ var challenge_hour = timeArray[0],
 
   var date = new Date(year,month,day),
       challenge_time = new Date(year, month, day, challenge_hour, challenge_minute);
-  console.log(year, month, day, challenge_hour, challenge_minute);
-  console.log(challenge_time);
+  // console.log(year, month, day, challenge_hour, challenge_minute);
+  // console.log(challenge_time);
 
 var input = {
             user_id: id,
@@ -94,9 +94,11 @@ var input = {
             recurring: 0
 }
       req.getConnection(function(err, connection){
-  connection.query("INSERT INTO user_challenges SET ?", input, function(err, result){
+        connection.query("DELETE FROM user_challenges WHERE user_id = ?", id, function(err, result){
     if (err) return next(err);
+    connection.query("INSERT INTO user_challenges SET ?", input, function(err, result){
     res.redirect('/user/'+id);
   });
+});
 });
 };

@@ -13,7 +13,7 @@ CREATE TABLE users(
   #password VARCHAR(100),
 );
 
-INSERT INTO users (name) VALUES ("lusando"),("eugene");
+INSERT INTO users (name) VALUES ("Lusando"),("Eugene");
 
 CREATE TABLE challenge_types(
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,

@@ -52,3 +52,14 @@ a.button {
     text-decoration: none;
     /*color: initial;*/
 }
+
+#message {
+  padding: 1.5em 2em;
+  background-color: orange;
+  text-transform: centre;
+  font-weight: bolder; 
+}
+
+#welcome-message {
+
+}
