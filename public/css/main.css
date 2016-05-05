@@ -38,10 +38,11 @@
     border: none;
     /* options are none, dotted, dashed, solid, double, groove, ridge, inset, outset */
 }
+
 label > input {
-    visibility: hidden;
-    position: absolute;
+  display: none;
 }
+
 label > input + img {
     cursor: pointer;
     border: 2px solid transparent;
@@ -51,8 +52,8 @@ label > input:checked + img {
 }
 
 .type-icons {
-  width: 5em,
-  height: 5em
+  width: 2em,
+  height: 2em
 }
 
 a.button {
