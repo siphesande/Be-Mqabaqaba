@@ -1,15 +1,60 @@
+// var getChallenges = require ('../data/challenges');
+
 exports.showChallenge = function(req, res, next) {
   var id = req.params.userID,
       context;
 
       req.getConnection(function(err, connection){
-        connection.query("SELECT * from user_challenges WHERE user_id = ?", id, function(err, result){
+        connection.query("SELECT * FROM user_challenges WHERE user_id = ?", id, function(err, result){
           if (err) return next(err);
+          console.log(result);
           context = {
                       no_challenges: result.length===0,
-                      challenges: result.length>0,
                       userID: id
           };
+
+          if(result.length>0) {
+            context.challenges = result[0];
+
+          var date = result[0].date,
+              type = result[0].type_id,
+              challenges = [ { id: 1,
+                               description: 'Go for a run and take a picture of something that inspires you!',
+                               type_id: 1,
+                               time_limit: 10,
+                               distance: 1000 },
+                           { id: 2,
+                             description: 'Take a new friend out for coffee!',
+                             type_id: 2,
+                             time_limit: 0,
+                             distance: 0 },
+                           { id: 3,
+                             description: 'Make a healthy home-made snack and share with 3 friends!',
+                             type_id: 3,
+                             time_limit: 10,
+                             distance: 500 }];
+
+          var details = challenges.find(function(a){
+            return a.type_id === type;
+          });
+
+          console.log(details);
+          context.challenges.day = date.getDay() + 1,
+          context.challenges.month = date.getMonth() + 1,
+          context.challenges.year = date.getFullYear(),
+          timeArray = result[0].time.split(":");
+
+          context.challenges.hour = timeArray[0],
+          context.challenges.minute = timeArray[1];
+          console.log("This is challenges", context.challenges);
+        }
+
+          // var current="Time's up!";        //—>enter what you want the script to display when the target date and time are reached, limit to 20 characters
+          // var year=2016;        //—>Enter the count down target date YEAR
+          // var month=5;          //—>Enter the count down target date MONTH
+          // var day=21;           //—>Enter the count down target date DAY
+          // var hour=18;          //—>Enter the count down target date HOUR (24 hour clock)
+          // var minute=38;
           connection.query("SELECT * from users WHERE id = ?", id, function(err, result){
             if (err) return next(err);
             console.log(result);
