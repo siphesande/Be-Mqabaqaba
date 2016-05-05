@@ -1,6 +1,6 @@
 .numbers {
     padding: 0px;
-    width: 45px;
+    width: 50%;
     text-align: center;
     font-family: Arial;
     font-size: 28px;
@@ -11,15 +11,15 @@
 .title {        /* the styles below will affect the title under the numbers, i.e., “Days”, “Hours”, etc. */
     border-style: none;
     padding: 0px 0px 3px 0px;
-    width: 45px;
-    text-align: center;
+    width: 80%;
+    text-align: centre;
     font-family: Arial;
-    font-size: 10px;
+    font-size: 2em;
     font-weight: bold;   /* options are normal, bold, bolder, lighter */
     color: #FFFFFF;      /* change color using the hexadecimal color codes for HTML */
 }
 #table {
-    width: 400px;
+    width: 80%;
     height: 70px;
     border-style: ridge;
     border-width: 3px;
@@ -36,12 +36,12 @@ label > input + img {
     border: 2px solid transparent;
 }
 label > input:checked + img {
-    border: 2px solid #f00;
+    border: 2px solid blue;
 }
 
 .type-icons {
-  width: 2em,
-  height: 2em
+  width: 50px;
+  height: 50px;
 }
 
 a.button {
@@ -58,6 +58,7 @@ a.button {
   background-color: orange;
   text-transform: centre;
   font-weight: bolder;
+  font-size: 1.5em;
 }
 
 #welcome-message {
