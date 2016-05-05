@@ -12,6 +12,7 @@ exports.showChallenge = function(req, res, next) {
           };
           connection.query("SELECT * from users WHERE id = ?", id, function(err, result){
             if (err) return next(err);
+            console.log(result);
             context.user = result[0].name;
 
             res.render("user-home", context);
