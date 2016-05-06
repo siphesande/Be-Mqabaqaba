@@ -185,3 +185,21 @@ exports.showChallenges = function (req, res, next) {
         });
       });
       };
+
+      exports.reset = function (req, res, next) {
+          var id = req.params.userID;
+          var input = {
+                        points: 0,
+                        completed: 0
+          };
+          req.getConnection(function (err, connection) {
+          connection.query("UPDATE users SET ? WHERE id = ?", [input, id], function (err, result) {
+              if (err) return next(err);
+              connection.query("DELETE FROM user_challenges WHERE user_id = ?",id, function (err, result) {
+                  if (err) return next(err);
+              console.log("user updated!");
+              res.redirect('/user/' + id);
+            });
+            });
+        });
+    };
