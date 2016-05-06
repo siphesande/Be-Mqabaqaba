@@ -14,8 +14,10 @@
 </center>
 
 {{#no_challenges}}
+<div class="your-challenges">
 <h5>YOUR CHALLENGES</h5>
 <p class="message">Unfortunately there are no challenges for your profile yet.</p>
+</div>
 <!-- <a href="/user/1/challenge/add"><button id="addChallenge">add a challenge!</button></a> -->
 <center>
  <a href="/user/1/challenge/add"><button type="button" class="btn btn-success">Add a challenge!</button></a>
@@ -24,12 +26,12 @@
 {{/no_challenges}}
 
 {{#completed}}
-<div id="your-challenges">
-  <h5><strong>Your Challenges</strong></h5>
+<div class="your-challenges">
+  <h5><strong>YOUR CHALLENGES</strong></h5>
 </div>
 <p id="congrats-message">Well done, <strong>{{../user}}</strong>, you have completed <strong>{{completed}}</strong> challenges! <br> You have earned a total of <strong>{{points}}</strong> points!</p>
 <center>
-<a href="/user/1/challenge/add"><button><strong>Do another challenge!</strong></button></a>
+<a href="/user/1/challenge/add"><button class="btn btn-success"><strong>Do another challenge!</strong></button></a>
 </center>
 
 {{/completed}}

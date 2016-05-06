@@ -84,12 +84,14 @@ a.button {
 body{
   background-color:#ffff66;
 }
-#your-challenges {
+.your-challenges {
   background: red;
   /*border-radius: 5px;*/
   text-align: center;
   color: white;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-family: abel; 
+  font-family: abel;
+  font-size: 3em;
+  font-weight:900;
 }
