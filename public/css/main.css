@@ -63,11 +63,12 @@ a.button {
 }
 
 .message {
-  padding: 1.5em 2em;
+  padding: 5px;
   background-color: orange;
-  text-transform: centre;
-  font-weight: bolder;
-  font-size: 1.5em;
+  text-align:center;
+  font-weight: bold;
+  font-size: 1.2em;
+
 }
 
 #congrats-message {
@@ -77,6 +78,7 @@ a.button {
 
 #welcome-message {
   font-family: abel;
+  padding-bottom: 10px;
 }
 #add_a_challenge{
   margin-left: 10%;
@@ -90,8 +92,8 @@ body{
   text-align: center;
   color: white;
   padding-top: 5px;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   font-family: abel;
-  font-size: 3em;
+  font-size: 1.5em;
   font-weight:900;
 }
