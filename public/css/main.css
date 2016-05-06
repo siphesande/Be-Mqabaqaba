@@ -61,7 +61,11 @@ a.button {
     text-decoration: none;
     /*color: initial;*/
 }
-
+.default-font {
+  font-family: abel;
+  text-align: center;
+  background-color: #ffffb4;
+}
 .message {
   padding: 5px;
   background-color: orange;
