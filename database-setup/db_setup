@@ -1,2 +1,2 @@
 #!/bin/bash
-mysql --local-infile -u root -08386354 < database-setup.sql
+mysql --local-infile -u root -p08386354 < database-setup.sql
