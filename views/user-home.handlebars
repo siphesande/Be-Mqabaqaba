@@ -9,24 +9,30 @@
     display: block;
   }
 </style>
-
+<center>
 <h3 id="welcome-message">Welcome, {{user}} !</h3>
-
+</center>
 
 {{#no_challenges}}
-<h5>Your Challenges</h5>
-<p id="message">Unfortunately there are no challenges for your profile yet.</p>
+<div class="your-challenges">
+<h5>YOUR CHALLENGES</h5>
+<p class="message">Unfortunately there are no challenges for your profile yet.</p>
+</div>
 <!-- <a href="/user/1/challenge/add"><button id="addChallenge">add a challenge!</button></a> -->
- <a href="/user/1/challenge/add"><button type="button" id="add_a_challenge" class="btn btn-success">Add a challenge!</button></a>
+<center>
+ <a href="/user/1/challenge/add"><button type="button" class="btn btn-success">Add a challenge!</button></a>
+ </center>
 
 {{/no_challenges}}
 
 {{#completed}}
-<h5>Your Challenges</h5>
-
-<p>Well done, <strong>{{../user}}</strong>, you have completed <strong>{{completed}}</strong> challenges! <br> You have earned a total of <strong>{{points}}</strong> points!</p>
-
-<a href="/user/1/challenge/add"><button>do another challenge!</button></a>
+<div class="your-challenges">
+  <h5><strong>YOUR CHALLENGES</strong></h5>
+</div>
+<p id="congrats-message">Well done, <strong>{{../user}}</strong>, you have completed <strong>{{completed}}</strong> challenges! <br> You have earned a total of <strong>{{points}}</strong> points!</p>
+<center>
+<a href="/user/1/challenge/add"><button class="btn btn-success"><strong>Do another challenge!</strong></button></a>
+</center>
 
 {{/completed}}
 
@@ -62,7 +68,7 @@
 
 
 <h2> Your challenge for today... </h2>
-<p id="message" class="hidden">{{{message}}}</p>
+<p class="message" class="hidden">{{{message}}}</p>
 <center>
 <a href="/user/1/challenge/complete"><button id="complete" class="btn-success hidden" >Challenge Completed</button></a>
 <a href="/user/1/challenge/cancel"><button class="btn-danger">Stop Challenge</button></a>

@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'raleway';
+  src: url('/fonts/Raleway Thin.otf');
+}
+@font-face {
+  font-family: 'abel';
+  src: url('/fonts/Abel-Regular.ttf');
+}
+
 .numbers {
     padding: 0px;
     width: 50%;
@@ -53,7 +62,7 @@ a.button {
     /*color: initial;*/
 }
 
-#message {
+.message {
   padding: 1.5em 2em;
   background-color: orange;
   text-transform: centre;
@@ -61,12 +70,28 @@ a.button {
   font-size: 1.5em;
 }
 
-#welcome-message {
+#congrats-message {
+  margin-top: 10px;
+  background-color: #ffffb4;
+}
 
+#welcome-message {
+  font-family: abel;
 }
 #add_a_challenge{
   margin-left: 10%;
 }
 body{
-  background-color:#00ffff;
+  background-color:#ffff66;
+}
+.your-challenges {
+  background: red;
+  /*border-radius: 5px;*/
+  text-align: center;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: abel;
+  font-size: 3em;
+  font-weight:900;
 }
