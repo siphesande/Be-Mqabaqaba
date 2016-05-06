@@ -45,7 +45,10 @@ label > input + img {
     border: 2px solid transparent;
 }
 label > input:checked + img {
-    border: 2px solid blue;
+    /*border: 2px solid blue;*/
+    -webkit-box-shadow: inset 1px 1px 12px 5px red;
+-moz-box-shadow: inset 1px 1px 12px 5px red;
+    box-shadow: inset 1px 1px 12px58px red;
 }
 
 .type-icons {

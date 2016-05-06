@@ -69,7 +69,7 @@
 
 
 <h2> Your challenge for today... </h2>
-<p class="message" class="hidden">{{{message}}}</p>
+<p class="message hidden">{{{message}}}</p>
 <center>
 <a href="/user/1/challenge/complete"><button id="complete" class="btn-success hidden" >Challenge Completed</button></a>
 <a href="/user/1/challenge/cancel"><button class="btn-danger">Stop Challenge</button></a>
@@ -107,8 +107,8 @@ if(dday<=0&&dhour<=0&&dmin<=0&&dsec<=0){
   document.querySelector("#clock").classList.add("hidden");
   //document.querySelector("#message").classList.add("show");
 
-  document.querySelector("#message").classList.remove("hidden");
-  document.querySelector("#message").classList.add("show");
+  document.querySelector(".message").classList.remove("hidden");
+  document.querySelector(".message").classList.add("show");
 
 document.getElementById('count2').innerHTML=stopMessage;
 document.getElementById('count2').style.display="block";
