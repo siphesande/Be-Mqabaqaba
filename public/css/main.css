@@ -53,12 +53,16 @@ a.button {
     /*color: initial;*/
 }
 
-#message {
+.message {
   padding: 1.5em 2em;
   background-color: orange;
   text-transform: centre;
   font-weight: bolder;
   font-size: 1.5em;
+}
+
+#congrats-message {
+  background-color: 
 }
 
 #welcome-message {
@@ -69,4 +73,10 @@ a.button {
 }
 body{
   background-color:#00ffff;
+}
+#your-challenges {
+  background: red;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
 }
