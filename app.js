@@ -60,7 +60,7 @@ app.get('/user/:userID/challenge/add',function(req,res){
   res.render('add-challenge');
 });
 
-// app.get('/user/:userID/reset', user.reset);
+//app.get('/user/:userID/reset', user.reset);
 
 app.post('/user/:userID/challenge/add/success', user.addChallenge);
 
