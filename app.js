@@ -15,7 +15,7 @@ var app = express();
 var dbOptions = {
       host: 'localhost',
       user: 'root',
-      password: '1amdan13l',
+      password: '08386354',
       port: 3306,
       database: 'mqabaqaba'
 };
@@ -45,12 +45,12 @@ app.use(bodyParser.json())
 
 //setup the handlers
 app.get('/', function (req, res) {
-  res.redirect('/home');
+  res.redirect('/user/1');
 });
 
-app.get('/home', function(req,res){
-    res.render('home');
-});
+// app.get('/home', function(req,res){
+//     res.render('home');
+// });
 //app.post("/giveChallenge", challenge.giveChallenge ),
 
 app.get('/user/:userID', user.showChallenges);
@@ -59,6 +59,8 @@ app.get('/user/:userID/challenge/cancel', user.cancel);
 app.get('/user/:userID/challenge/add',function(req,res){
   res.render('add-challenge');
 });
+
+app.get('/user/:userID/reset', user.reset);
 
 app.post('/user/:userID/challenge/add/success', user.addChallenge);
 
