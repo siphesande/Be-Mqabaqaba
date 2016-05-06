@@ -177,7 +177,11 @@ exports.showChallenges = function (req, res, next) {
             connection.query("UPDATE users SET ? WHERE id = ?", [input, id], function (err, result) {
                 if (err) return next(err);
                 console.log("user updated!");
+                connection.query("DELETE FROM user_challenges WHERE user_id = ?",id, function (err, result) {
+                    if (err) return next(err);
+
                 res.redirect('/user/' + id);
+              });
         });
       });
       };
