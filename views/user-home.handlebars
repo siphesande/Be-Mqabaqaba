@@ -9,15 +9,17 @@
     display: block;
   }
 </style>
-
+<center>
 <h3 id="welcome-message">Welcome, {{user}} !</h3>
-
+</center>
 
 {{#no_challenges}}
-<h5>Your Challenges</h5>
+<h5>YOUR CHALLENGES</h5>
 <p class="message">Unfortunately there are no challenges for your profile yet.</p>
 <!-- <a href="/user/1/challenge/add"><button id="addChallenge">add a challenge!</button></a> -->
- <a href="/user/1/challenge/add"><button type="button" id="add_a_challenge" class="btn btn-success">Add a challenge!</button></a>
+<center>
+ <a href="/user/1/challenge/add"><button type="button" class="btn btn-success">Add a challenge!</button></a>
+ </center>
 
 {{/no_challenges}}
 
@@ -26,8 +28,9 @@
   <h5><strong>Your Challenges</strong></h5>
 </div>
 <p id="congrats-message">Well done, <strong>{{../user}}</strong>, you have completed <strong>{{completed}}</strong> challenges! <br> You have earned a total of <strong>{{points}}</strong> points!</p>
-
+<center>
 <a href="/user/1/challenge/add"><button><strong>Do another challenge!</strong></button></a>
+</center>
 
 {{/completed}}
 
